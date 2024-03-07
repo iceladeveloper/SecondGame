@@ -13,6 +13,7 @@ public class JohnMove : MonoBehaviour
     private Animator Animator;
     private float Horizontal;
     private bool Grounded;
+    private float LastShoot;
 
     void Start()
     {
@@ -48,9 +49,10 @@ public class JohnMove : MonoBehaviour
         }
        
         //Disparar
-        if (Input.GetKey(KeyCode.Space))        
+        if ((Input.GetKey(KeyCode.Space))    && Time.time >   LastShoot + 0.25f)
         {
             Shoot();
+            LastShoot = Time.time;
         }
     }
     
