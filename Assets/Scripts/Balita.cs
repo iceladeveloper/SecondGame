@@ -23,4 +23,10 @@ public class Balita : MonoBehaviour
     {
         Direction = direction;
     }
-}
+    public void DestroyBullet()
+    {
+        Destroy(gameObject);
+    }
+
+}   
+
